@@ -1,0 +1,15 @@
+{
+    "type": "record",
+    "name": "EventoCriacaoReciboDadosCompra",
+    "namespace": "com.ecommerce.recibo.evento",
+    "fields": [
+        {
+            "name": "codigoDadosCompra",
+            "type": ["string"]
+        },
+        {
+            "name": "codigoPagamento",
+            "type": ["string"]
+        }
+    ]
+}

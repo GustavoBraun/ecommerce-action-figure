@@ -1,0 +1,15 @@
+{
+    "type": "record",
+    "name": "EventoCriacaoDadosCompra",
+    "namespace": "com.ecommerce.dadoscompra.evento",
+    "fields": [
+        {
+            "name": "codigoDadosCompra",
+            "type": ["string"]
+        },
+        {
+            "name": "status",
+            "type": ["string"]
+        }
+    ]
+}

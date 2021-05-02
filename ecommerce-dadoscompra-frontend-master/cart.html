@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Ecommerce - Cart</title>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container">
+    <form action="http://localhost:8080/v1/dadosCompra/" class="needs-validation" method="post" novalidate="">
+        <div class="row">
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Your cart</span>
+                    <span class="badge badge-secondary badge-pill">3</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Batman edição Injustice 2</h6>
+                            <small class="text-muted">Tamanho 42cm edição de colecionador</small>
+                        </div>
+                        <span class="text-muted">350.99</span>
+                        <input name="produtos" type="hidden" value="batman">
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Superman edição Injustice 2</h6>
+                            <small class="text-muted">Tamanho 38cm</small>
+                        </div>
+                        <span class="text-muted">R$260,00</span>
+                        <input name="produtos" type="hidden" value="superman">
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Wonder Woman edição Injustice 2</h6>
+                            <small class="text-muted">Tamanho 38cm</small>
+                        </div>
+                        <span class="text-muted">R$260,00</span>
+                        <input name="produtos" type="hidden" value="wonderwoman">
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Total (BRL)</span>
+                        <strong>R$870.99</strong>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Endereço de cobrança</h4>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="primeiroNome">Nome</label>
+                        <input class="form-control" id="primeiroNome" name="primeiroNome" placeholder="" required=""
+                               type="text" value="">
+                        <div class="invalid-feedback">
+                            Nome é obrigatório.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input class="form-control" id="sobrenome" name="sobrenome" placeholder="" required="" type="text"
+                               value="">
+                        <div class="invalid-feedback">
+                            Sobrenome é obrigatório.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="nomedeUsuario">Nome de usuário</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">@</span>
+                        </div>
+                        <input class="form-control" id="nomedeUsuario" name="nomedeUsuario" placeholder="Nome de usuário" required=""
+                               type="text">
+                        <div class="invalid-feedback" style="width: 100%;">
+                            Usuário é obrigatório.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                    <input class="form-control" id="email" name="email" placeholder="exemplo@hotmail.com" type="email">
+                    <div class="invalid-feedback">
+                        Insira um e-mail válido.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="endereco">Endereço</label>
+                    <input class="form-control" id="endereco" name="endereco" placeholder="84 Rua do Caos" required=""
+                           type="text">
+                    <div class="invalid-feedback">
+                        Insira um endreço válido.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="complemento">Complemento <span class="text-muted">(Optional)</span></label>
+                    <input class="form-control" id="complemento" name="complemento" placeholder="Apartamento ou bloco"
+                           type="text">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="pais">País</label>
+                        <select class="custom-select d-block w-100" id="pais" name="pais" required="">
+                            <option value="">País...</option>
+                            <option>Brasil</option>
+                            <option>México</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Selecione um país.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="estado">Estado</label>
+                        <select class="custom-select d-block w-100" id="estado" name="estado" required="">
+                            <option value="">Estado...</option>
+                            <option>MG</option>
+                            <option>RJ</option>
+                            <option>SP</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Selecione um estado.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="cep">CEP</label>
+                        <input class="form-control" id="cep" name="cep" placeholder="" required="" type="text">
+                        <div class="invalid-feedback">
+                            Insira um CEP válido.
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" id="mesmo-endereco" name="salvarEndereco" type="checkbox">
+                    <label class="custom-control-label" for="mesmo-endereco">Endereço de entrega é o mesmo endereço de
+                        cobrança</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" id="salvar-info" name="salvarInfo" type="checkbox">
+                    <label class="custom-control-label" for="salvar-info">Salva as informações para a próxima
+                        compra</label>
+                </div>
+                <hr class="mb-4">
+
+                <h4 class="mb-3">Pagamento</h4>
+
+                <div class="d-block my-3">
+                    <div class="custom-control custom-radio">
+                        <input checked="" class="custom-control-input" id="credito" name="metodoPagamento" required=""
+                               type="radio" value="CREDITO">
+                        <label class="custom-control-label" for="credito">Cartão de crédito</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input class="custom-control-input" id="debito" name="metodoPagamento" required="" type="radio"
+                               value="DEBITO">
+                        <label class="custom-control-label" for="debito">Cartão de débito</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="cc-nome">Nome Completo</label>
+                        <input class="form-control" id="cc-nome" name="nomeCartao" placeholder="" required="" type="text">
+                        <small class="text-muted">Nome completo como impresso no cartão</small>
+                        <div class="invalid-feedback">
+                            Insira o nome completo como impresso no cartão
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="cc-numero">Número</label>
+                        <input class="form-control" id="cc-numero" name="numeroCartao" placeholder="" required=""
+                               type="text">
+                        <div class="invalid-feedback">
+                            Insira o Número do cartão
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="cc-expiracao">Data de validade</label>
+                        <input class="form-control" id="cc-expiracao" name="validadeCartao" placeholder="" required=""
+                               type="text">
+                        <div class="invalid-feedback">
+                            Insira a data de validade do cartão
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="cc-cvv">CVV</label>
+                        <input class="form-control" id="cc-cvv" name="cartaoCvv" placeholder="" required="" type="text">
+                        <div class="invalid-feedback">
+                            Insira o CVV
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Comprar</button>
+            </div>
+        </div>
+    </form>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">© 2017-2018 Nome Companhia</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script crossorigin="anonymous"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<!--<script src="../../assets/js/vendor/holder.min.js"></script>-->
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict';
+
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+
+
+<div class="chrome_websiteIP_right" id="chrome_websiteIP">104.22.58.100</div>
+</body>
+</html>
